@@ -1,0 +1,32 @@
+baseURL = "https://www.cs.utexas.edu/~bebeal/"
+languageCode = "en-us"
+title = "Noah's Site"
+theme = "book"
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "monokai"
+    tabWidth = 4
+[markup.goldmark.extensions]
+    definitionList = true
+    footnote = true
+    linkify = true
+    strikethrough = true
+    table = true
+    taskList = true
+    typographer = true
+[markup.goldmark.parser]
+    attribute = true
+    autoHeadingID = true
+    autoHeadingIDType = "github"
+[markup.goldmark.renderer]
+    hardWraps = false
+    unsafe = true
+    xhtml = false
+    
