@@ -1,5 +1,5 @@
 public/
-.vscode/
+vscode/
 themes/book/exampleSite/
 themes/book/images/
 themes/book/.gitignore
