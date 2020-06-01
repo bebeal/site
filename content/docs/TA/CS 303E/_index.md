@@ -15,6 +15,8 @@ Materials for my time as TA during the Summer 2020 session of CS 303E taught in 
 
 - [PEP 8 Style Guide](https://www.python.org/dev/peps/pep-0008/)
 
+- [Guide on how to setup and install Pycharm](installingpycharm)
+
 <br>
 
 Lab Hours:
