@@ -17,6 +17,8 @@ Materials for my time as TA during the Summer 2020 session of CS 303E taught in 
 
 - [Guide on how to setup and install Pycharm](installingpycharm)
 
+- [Easter Eggs](eastereggs)
+
 <br>
 
 Lab Hours:

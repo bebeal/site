@@ -1,3 +1,99 @@
 /* You can add custom styles here. */
 
 // @import "plugins/numbered";
+
+button {
+    display: inline-block;
+    font-size: $font-size-14;
+    color: $color-link;
+    background-color: transparent;
+    line-height: $padding-16 * 2;
+    padding: 0 $padding-16;
+    border: $padding-1 solid $color-link;
+    border-radius: $border-radius;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .inputGroup {
+    background-color: transparent;
+    display: block;
+    position: relative;
+    padding-top: 10px;
+
+    label {
+      border-radius: .25rem;
+      width: 100%;
+      display: block;
+      text-align: left;
+      background-color: #272822;
+      cursor: pointer;
+      position: relative;
+      z-index: 2;
+      transition: color 150ms ease-in;
+      overflow: hidden;
+
+      &:before {
+        width: 15px;
+        height: 10px;
+        border-radius: 50%;
+        content: '';
+        background-color: #4b73b8;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale3d(1, 1, 1);
+        transition: all 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+        opacity: 0;
+        z-index: -1;
+      }
+
+      &:after {
+        opacity: 0;
+        position: fixed;
+      }
+    }
+
+    input:checked ~ label {
+      color: #ffffff;
+
+      &:before {
+        transform: translate(-50%, -50%) scale3d(56, 56, 1);
+        opacity: 1;
+      }
+    }
+
+    input {
+      width: 32px;
+      height: 32px;
+      order: 1;
+      z-index: 2;
+      position: absolute;
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      visibility: hidden;
+    }
+
+    pre, code {
+      padding: 0px 10px;
+      white-space: normal;
+      margin: .5em;
+    }
+  }
+
+.source {
+    position: relative;
+    bottom: 15px;
+    font-size: 10px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
