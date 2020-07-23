@@ -17,6 +17,10 @@ Materials for my time as TA during the Summer 2020 session of CS 303E taught in 
 
 - [Guide on how to setup and install Pycharm](installingpycharm)
 
+- [Exam Material](exammaterial)
+    - [Code Tracing Problems](exammaterial/codetracing)
+    - [Coding Questions](exammaterial/codingquestions)
+
 - [Easter Eggs](eastereggs)
 
 <br>

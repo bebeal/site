@@ -15,6 +15,10 @@ print(t)
 k = eval('99.0 + 1')
 print(k)
 
+#@ @2@ @5@ @['A', 'l', 'a', 'n', ' ', 'T', '.']@ @['Alan T.']@ @RUNTIME ERROR@ @['Alan', 'T.']@
+l = list('Alan T.')
+print(l)
+
 #@ @2@ @6@ @6@ @4@ @7@ @6 7@
 x = min(max(3, 6), max(4, 7))
 print(x)
