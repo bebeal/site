@@ -414,6 +414,99 @@ def contains_all(data1, data2):
 {{< /details >}}
 <sup><a href='https://www.cs.utexas.edu/~scottm/cs312/handouts/tests/FA_19_E2.pdf'>source</a></sup>
 
+<br>
+
+### max_run
+
+Complete a function that returns the length of the longest run of equal values in a list. Consecutive equal values make up a run. Consider the following example:
+
+```python
+[5, 1, 1, 5, 5, 1, 1, 2, 2, 2, 2, 3, 5]
+```
+
+The longest run of equal values is the run of four 2s shown underlined. Given the list above, the function shall return 4.
+
+The list shall have of length greater than or equal to 1.
+
+The only built in functions you may use are the range and len functions. Do not create any new lists. The given list is not altered by this function.
+
+Complete the following function.
+
+```python
+# data is a list with 1 or more elements. All elements in data are integers. 
+# The function returns an integer equal to the longest run of equal values 
+# in data.
+def max_run(data):
+```
+{{< details title="Show Solution" open=false >}}
+
+```python
+# data is a list with 1 or more elements. All elements in data are integers. 
+# The function returns an integer equal to the longest run of equal values 
+# in data.
+def max_run(data):
+    prev = data[0]
+    run_length = 1
+    max_length = 1
+    for i in range(1, len(data)):
+        val = data[i]
+        if val == prev:
+            run_length += 1
+            if run_length > max_length:
+                max_length = run_length
+        else:
+            prev = val
+            run_length = 1
+    return max_length
+```
+{{< /details >}}
+<sup>source: Summer 2020 Final</sup>
+
+
+<br>
+
+### get_matching_elements
+
+Complete a function that given two lists of Strings, returns a new list of String composed of those elements from the given two lists that have the same position, are equal ignoring case, and have a length greater than 3.
+
+Consider this example:
+
+```python
+strs1: ['AMD',   'ibm', 'Google', 'snap', 'micro-soft', 'FACEBOOK']
+strs2: ['apple', 'ibm', 'Oracle', 'Snap', 'Microsoft',  'facebook', 'AMD', 'CSC']
+```
+
+Given those two lists, the function would return the list `['snap', 'FACEBOOK']`. The relative order of the elements in the returned list is the same as in the given lists.
+
+Notice how `ibm` is not included as it has  a length less than or equal to 3.  Note, if there is a difference in capitalization, the  string from the first list is placed in the result. `snap` instead of `Snap` for instance.
+
+The only built in functions you may use are the len, range, and min functions, Plus the append method for lists and the lower and upper methods for strings.
+
+Create a single list, the one that is returned by the function. The given lists are not altered by this function.
+
+Complete the following function.
+
+```python
+# strs1 and strs2 are lists. All elements of strs1 and strs2 are strings.
+def get_matching_elements(strs1, strs2):
+```
+{{< details title="Show Solution" open=false >}}
+
+```python
+# strs1 and strs2 are lists. All elements of strs1 and strs2 are strings.
+def get_matching_elements(strs1, strs2):
+    result = []
+    min_length = min(len(strs1), len(strs2))
+    for i in range(min_length):
+        st1 = strs1[i].lower()
+        st2 = strs2[i].lower()
+        if len(st1) >= 4 and st1 == st2:
+            result.append(strs1[i])
+    return result
+```
+{{< /details >}}
+<sup>source: Summer 2020 Final</sup>
+
 
 <br>
 
@@ -538,6 +631,192 @@ def swap_matrices(data1, data2):
                 data1[r][c], data2[r][c] = data2[r][c], data1[r][c]
 ```
 {{< /details >}}
+
+
+<br>
+
+
+### index_of_column_sum_matching_target
+
+Complete a function that given a 2d list of integers returns the index of the column closest to 0 whose elements equal some given target value. If no column sum equals the target value return -1. Consider the following example:
+
+```bash
+[[5, 1, 8],
+ [3, 0, -4],
+ [-5, 3, 0]]
+```
+Given the above matrix, the return value for various targets would be:
+
+```
+target = 4, function returns 1
+target = 3, function returns 0
+target = 8, function returns -1
+```
+
+The only built in functions you may use are the range and len functions. Do not create any new lists. The given list of lists is not altered by this function.
+
+Complete the following function.
+
+```python
+# mat is a rectangular list of lists.
+# Each row has the same number of columns.
+# All elements are integers.
+# tgt is an integer
+def index_of_column_sum_matching_target(mat, tgt):
+```
+{{< details title="Show Solution" open=false >}}
+
+```python
+# mat is a rectangular list of lists.
+# Each row has the same number of columns.
+# All elements are integers.
+# tgt is an integer
+def index_of_column_sum_matching_target(mat, tgt):
+    for c in range(len(mat[0])):
+        total = 0
+        for r in range(len(mat)):
+            total += mat[r][c]
+        if total == tgt:
+            return c
+    return -1
+```
+{{< /details >}}
+<sup>source: Summer 2020 Final</sup>
+
+
+<br>
+
+## Files
+
+### process_file
+
+Complete a function that given a file name, reads the lines of the file.
+
+For each line the function prints out the number of tokens (elements separated by white space)  on the line except for the tokens that contain a given character. The average length of the tokens on the line is also printed, again excluding any tokens that contain the given character.
+
+Example. If the given file is as follows and the target character was 'A' (tokens that are ignored are underlined):
+
+<pre>This is line 1.
+Line 2 
+<u>A</u> lot of <u>Apples</u>
+<u>Abba</u> <u>WAS</u> <u>Awestruck</u> 
+a lot of apples
+</pre>
+
+Then the output of the function would be:
+
+<pre>line 1 tokens 4 average length: 3.0
+line 2 tokens 2 average length: 2.5
+line 3 tokens 2 average length: 2.5
+line 4 no tokens
+line 5 tokens 4 average length: 3.0
+</pre>
+
+The only built in functions you may use are the open, len, and print, plus the readlines method for file objects and the split method for strings.
+
+Complete the following function. Do not repeat the function header in your answer.
+
+```python
+# file_name is the name of a file that exists. 
+# tgt_ch is a string consisting of a single character.
+def process_file(file_name, tgt_ch):
+```
+{{< details title="Show Solution" open=false >}}
+
+```python
+# file_name is the name of a file that exists. 
+# tgt_ch is a string consisting of a single character.
+def process_file(file_name, tgt_ch):
+    infile = open(file_name)
+    line_num = 1
+    for line in infile.readlines():
+        num = 0
+        total_length = 0
+        for token in line.split():
+            if not tgt_ch in token:
+                num += 1
+                total_length += len(token)
+        if num != 0:
+            print('line', line_num, 'tokens', num, 'average length:',
+                  (total_length / num))
+        else:
+            print('line', line_num, 'no tokens')
+        line_num += 1
+```
+{{< /details >}}
+<sup>source: Summer 2020 Final</sup>
+
+
+<br>
+
+
+## Dictionaries
+
+### update_authors
+
+Complete a function that given a dictionary showing collaborations between authors of academic papers and a list of Strings of the co-authors for a new paper, updates the dictionary.
+
+Modern academic papers typically have multiple authors. For example, here are the authors of recent paper by UTCS's own William Cook:
+
+![](/~bebeal/coding-questions_/dict1.png)
+
+The dictionary sent to this function has keys that are strings, the last names of authors. The values in the dictionary are also dictionaries. The value dictionaries have keys that are strings representing the co-authors of the given author from the original dictionary. The values of the sub dictionary are integers, the number of times the two authors have been co-authors.
+
+For example, the initial dictionary might look something like this (quotes on strings not shown):
+
+
+|key|value (a sub dictionary)|
+|---|------------------------|
+Loh|	{Cook: 2, Miller: 1, Lee: 3}|
+Cook|	{Loh: 2, Lee: 5}|
+Lee|	{Loh: 3, Cook: 5}|
+Miller|	{Loh: 1}|
+
+The author list for the paper shown above would be `['Storm', 'Cook', 'Loh']`
+
+The function updates the dictionary based on the author list for the paper. After the function the dictionary for this example would be as follows (quotes on strings not shown):
+
+
+|key	| value (a sub dictionary)|
+|---|---|
+Loh|{Cook: 3, Miller: 1, Lee: 3, Storm: 1}|
+Cook|	{Loh: 2, Lee: 5, Storm: 1}|
+Lee|	{Loh: 3, Cook: 5}|
+Miller|	{Loh: 1}|
+Storm|	{Cook: 1, Loh: 1}|
+
+You may assume none of the authors of a paper have the same last name.
+
+Do not use any built in functions. Do not create any data structures other than new sub dictionaries for authors that did not appear in the main dictionary before the function call.
+
+Complete the following function.
+
+```python
+# authors is a dictionary as described in the question.
+# paper is  a list of Strings with no duplicate elements.
+def update_authors(authors, paper):
+```
+{{< details title="Show Solution" open=false >}}
+
+```python
+# authors is a dictionary as described in the question.
+# paper is  a list of Strings with no duplicate elements.
+def update_authors(authors, paper):
+    for author in paper:
+        sub = {}
+        if author in authors:
+            sub = authors[author]
+        else:
+            authors[author] = sub
+        for coauthor in paper:
+            if coauthor != author:
+                if coauthor in sub:
+                    sub[coauthor] += 1
+                else:
+                    sub[coauthor] = 1
+```
+{{< /details >}}
+<sup>source: Summer 2020 Final</sup>
 
 
 <br>
