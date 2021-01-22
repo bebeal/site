@@ -24,7 +24,7 @@ Researching the problem of Drug Design using [Neural ODE's](https://arxiv.org/pd
 
 <div>====================================================================================</div>
 
-<div id='date' style='width: 100%;' data-lettercrap-aspect-ratio='0.4'></div>
+<div id='date' style="height: 230px;width: 736px;"></div>
 
 <script>
     var dt = new Date();
@@ -33,10 +33,10 @@ Researching the problem of Drug Design using [Neural ODE's](https://arxiv.org/pd
     var day = dt.getDate();
     var canvas = document.createElement('canvas');
     var ctx = canvas.getContext('2d');
-    canvas.width = 500;
-    canvas.height = 115;
-    ctx.font = "78px Roboto";
-    ctx.fillText(month_as_string + ' ' + day, 80 - 8 * month_as_string.length, 85);
+    canvas.width = 736;
+    canvas.height = 230;
+    ctx.font = "160px Roboto";
+    ctx.fillText(month_as_string + ' ' + day, 0, 150);
     document.getElementById('date').setAttribute('data-letter-crap', (canvas.toDataURL('image/png')));
 </script>
 
