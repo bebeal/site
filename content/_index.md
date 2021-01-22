@@ -35,7 +35,7 @@ Researching the problem of Drug Design using [Neural ODE's](https://arxiv.org/pd
     var ctx = canvas.getContext('2d');
     canvas.width = 736;
     canvas.height = 230;
-    ctx.font = "160px Roboto";
+    ctx.font = "145px Roboto";
     ctx.fillText(month_as_string + ' ' + day, 0, 150);
     document.getElementById('date').setAttribute('data-letter-crap', (canvas.toDataURL('image/png')));
 </script>
