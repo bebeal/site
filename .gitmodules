@@ -1,0 +1,3 @@
+[submodule "themes/noahs-book"]
+	path = themes/noahs-book
+	url = https://github.com/bebeal/noahs-book

@@ -1,0 +1,8 @@
+baseURL = "https://www.cs.utexas.edu/~bebeal/"
+languageCode = "en-us"
+title = "Noahs Site"
+theme = "noahs-book"
+[markup.goldmark.renderer]
+    unsafe = true
+[params]
+    BookTheme = 'dark'
