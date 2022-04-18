@@ -9,13 +9,13 @@ type: docs
 
 ## This Website
 
-This website serves as a place to store my thoughts/opinions on various topics, provide a deeper look into some of my projects, provide helpful resources to my students (when I was a TA) and house anything else I might want on it.
+This website serves as a place to store my thoughts/opinions on various topics, provide a deeper look into some of my projects, provide helpful resources to my students (when I was a TA) and house anything else I might want on it. {{< cite "VizDoom" >}}
 
 ## About Me
 
 * My name is Benjamin Beal, but I normally go by Noah (my middle name).
 * UTCS BS Class of 22'
-* I'm deeply interested in topics involving AI, DL/ML and many of my most up to date projects and though pieces involve them
+* I'm deeply interested in topics involving AI, DL/ML and many of my most up to date projects and though pieces involve them  {{< cite "VizDoom2" >}}
 
 ## Today In CS History
 
@@ -108,15 +108,6 @@ This website serves as a place to store my thoughts/opinions on various topics, 
 
 ## Contact
 
-<!-- <script>
-    var toc = document.getElementById('TableOfContents').firstElementChild;
-    var li = document.createElement("li");
-    var a = document.createElement("a");
-    a.appendChild(document.createTextNode("Contact"));
-    a.href = "#contact";
-    li.appendChild(a);
-</script> -->
-
 <script>
     var toc = document.getElementById('contact');
     toc.style = "height: 0px;width: 0px;overflow:hidden";
@@ -131,3 +122,11 @@ This website serves as a place to store my thoughts/opinions on various topics, 
 
 {{<katex>}}
 {{</katex>}}
+
+{{< references >}}
+
+{{< reference "VizDoom" "https://hugo-book-demo.netlify" >}}
+{{< reference "VizDoom2" "https://hugo-book-demo.netlify" >}}
+
+{{< /references >}}
+
